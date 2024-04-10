@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import "../../styles/register.css";
+
 
 function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
+  
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -26,13 +29,20 @@ function Register() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="email">Email:</label><br />
-      <input type="email" id="email" name="email" value={email} onChange={(event) => setEmail(event.target.value)} required /><br />
-      <label htmlFor="password">Password:</label><br />
-      <input type="password" id="password" name="password" value={password} onChange={(event) => setPassword(event.target.value)} required /><br />
-      <label htmlFor="passwordConfirmation">ConfirmPassword:</label><br />
-      <input type="password" id="passwordConfirmation" name="passwordConfirmation" value={passwordConfirmation} onChange={(event) => setPassword(event.target.value)} required /><br />
+    <form onSubmit={handleSubmit} className="sign-up-form">
+      <h2>Sign Up</h2>
+      <div className="form-group">
+        <label htmlFor="email">Email</label>
+        <input type="email" id="email" name="email" value={email} onChange={(event) => setEmail(event.target.value)} required />
+      </div>
+      <div className="form-group">
+        <label htmlFor="password">Password</label>
+        <input type="password" id="password" name="password" value={password} onChange={(event) => setPassword(event.target.value)} required />
+      </div>
+      <div className="form-group">
+        <label htmlFor="passwordConfirmation">passwordConfirmation</label>
+        <input type="password" id="passwordConfirmation" name="passwordConfirmation" value={passwordConfirmation} onChange={(event) => setPasswordConfirmation(event.target.value)} required />
+      </div>
       <button type="submit">Sign Up</button>
     </form>
   );
