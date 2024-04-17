@@ -5,7 +5,7 @@ import "../../styles/home.css";
 import SignUpForm from "./Register";
 import { func } from "prop-types";
 import { createClient } from "pexels";
-import { Navbar } from "./navbar";	
+import { Navbar } from "../component/navbar";
 export const Home = () => {
   const { store, actions } = useContext(Context);
   const [input, setInput] = useState("");
@@ -24,7 +24,7 @@ export const Home = () => {
     }
 
     btn.disabled = true;
-    const apiKey = "ben9WYjmqnsmOjJodwrB1ZgZSkjhMrBd1HR7cdEkjULgLJkmk7OPmYkW"; // Reemplaza 'YOUR_API_KEY' con tu clave de API de Pexels
+    const apiKey = "ben9WYjmqnsmOjJodwrB1ZgZSkjhMrBd1HR7cdEkjULgLJkmk7OPmYkW"; 
 
     fetch(`https://api.pexels.com/v1/search?query=${input}`, {
       headers: {

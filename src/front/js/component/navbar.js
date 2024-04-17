@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { FaHome } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 
 export const Navbar = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
-
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
+        <Link className="navbar-brand" to="/">
+          <FaHome />
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -25,55 +24,21 @@ export const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Home
+              <Link className="nav-link" to="/profile">
+                Profile
               </Link>
             </li>
-
+            <li className="nav-item">
+              <Link className="nav-link" to="/settings">
+                Settings
+              </Link>
+            </li>
           </ul>
-          <form className="d-flex">
-            <input
-              type="search"
-              placeholder="Search"
-              className="form-control me-2"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item dropdown">
-              <button
-                className="nav-link dropdown-toggle"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                onClick={toggleDropdown}
-              >
-                Profile
-              </button>
-              <ul
-                className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li>
-                  <Link className="dropdown-item" to="/profile">
-                    My Profile
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/settings">
-                    Settings
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/logout">
-                    Logout
-                  </Link>
-                </li>
-              </ul>
+            <li className="nav-item">
+              <Link className="nav-link" to="/login">
+                <FaUser />
+              </Link>
             </li>
           </ul>
         </div>

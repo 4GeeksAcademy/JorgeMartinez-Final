@@ -12,6 +12,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import Register from "./pages/Register";
 import { Login } from "./pages/Login";
+import {Profile} from "./pages/Profile";
 
 //create your first component
 const Layout = () => {
@@ -33,6 +34,7 @@ const Layout = () => {
                         <Route element={<h1>Not found!</h1>} />
                         <Route element={<Register />} path="/register" />
                         <Route element={<Login />} path="/login" />
+                        <Route element={<Profile />} path="/profile" />
                     </Routes>
                     <Footer />
                 </ScrollToTop>
