@@ -1,7 +1,60 @@
-/*
-    home.css: This website contains selectors only used in home.css
-
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+body {
+    background: #202020;
+    color: white;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    height: calc(100vh - 20px);
+    align-items: center;
+  }
+  
+  .card {
+    background: #2a2a2a;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 400px;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .input {
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .btn {
+    padding: 10px;
+    border-radius: 5px;
+    background: #202020;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn:disabled {
+      opacity: 0.5;
+  }
+  
+  .img {
+    margin-top: 10px;
+    width: 70%;
+  }
+  .container {
+    background-image: url("https://source.unsplash.com/random/1600x900");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }

@@ -11,7 +11,8 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import Register from "./pages/Register";
-import {Login} from "./pages/Login";
+import { Login } from "./pages/Login";
+
 //create your first component
 const Layout = () => {
     //the basename is used when your project is published in a subdirectory and not in the root of the domain
