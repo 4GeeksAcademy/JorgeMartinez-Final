@@ -10,7 +10,7 @@ function Register() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch('https://silver-disco-v7xq97v96rqhpw4r-3000.app.github.dev/api/sign_up', {
+    fetch('https://silver-disco-v7xq97v96rqhpw4r-3001.app.github.dev/api/sign_up', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ function Register() {
           <label htmlFor="passwordConfirmation">passwordConfirmation</label>
           <input type="password" placeholder='ConfirmPassword' id="passwordConfirmation" name="passwordConfirmation" value={passwordConfirmation} onChange={(event) => setPasswordConfirmation(event.target.value)} required />
         </div>
-        <button type="submit">Sign Up</button>
+        <button type="submit" onClick={(registered => true)}>Sign Up</button>
       </form>
       {registered && (
         <div className="notification">

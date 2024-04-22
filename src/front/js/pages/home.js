@@ -6,11 +6,14 @@ import SignUpForm from "./Register";
 import { func } from "prop-types";
 import { createClient } from "pexels";
 import { Navbar } from "../component/navbar";
+import { FacebookShareButton, TwitterShareButton, LinkedinShareButton, WhatsappShareButton } from "react-share";
+
 export const Home = () => {
   const { store, actions } = useContext(Context);
   const [input, setInput] = useState("");
   const [img, setImg] = useState("");
   const [btn, setButton] = useState({ disabled: false });
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   console.log(input);
 
@@ -58,9 +61,13 @@ export const Home = () => {
     }
   };
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <section className="container">
-<div className="card">
+      <div className="card">
         <h1>Image Generator</h1>
         <input
           type="text"
@@ -74,13 +81,32 @@ export const Home = () => {
         </button>
         <img className="img" src={img} id="img" ref={imgRef} />
         {img && (
-          <div>
+          <div className="share-download-container">
             <button className="btn" id="download-btn" onClick={downloadImage}>
               Download
             </button>
-            <button className="btn" id="save-btn">
+            <button className="btn" id="save-btn" onClick={() => {}}>
               Save
             </button>
+            <button className="btn" id="share-btn" onClick={toggleDropdown}>
+              Share
+            </button>
+            {isDropdownOpen && (
+              <div className="dropdown-menu">
+                <FacebookShareButton url={img}>
+                  <i className="fab fa-facebook-f"></i> Facebook
+                </FacebookShareButton>
+                <TwitterShareButton url={img}>
+                  <i className="fab fa-twitter"></i> Twitter
+                </TwitterShareButton>
+                <LinkedinShareButton url={img}>
+                  <i className="fab fa-linkedin-in"></i> LinkedIn
+                </LinkedinShareButton>
+                <WhatsappShareButton url={img}>
+                  <i className="fab fa-whatsapp"></i> WhatsApp
+                </WhatsappShareButton>
+              </div>
+            )}
           </div>
         )}
       </div>

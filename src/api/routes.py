@@ -23,7 +23,7 @@ CORS(api)
 def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    if email != "test" or password != "test":
+    if email != email or password != password:
         return jsonify({"msg": "Bad email or password"}), 401
 
     access_token = create_access_token(identity=email)
@@ -49,7 +49,7 @@ def create_sign_up():
 
 
 
-     if not('password' in data) or not('passwordConfirmation' in data):
+     if not( 'password' in data) or not('passwordConfirmation' in data):
         return jsonify({"error": "The password or password confirmation is not present"}), 400
    
 
